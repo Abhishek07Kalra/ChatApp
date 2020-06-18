@@ -35,7 +35,7 @@ class ChatActivity : AppCompatActivity() {
 
         val adapter = object : FirebaseListAdapter<Message>(options) {
             override fun populateView(v: View, model: Message, position: Int) {
-                (v as TextView).text = model
+                (v as TextView).text = model.email + "\n" + model.msg
             }
         }
         adapter.startListening()
